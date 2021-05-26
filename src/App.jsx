@@ -11,7 +11,7 @@ function App() {
   const [weather, setWeather] = weatherState
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className= 'app'>
         <main className={setBackground(weather)}>
           <Settings />

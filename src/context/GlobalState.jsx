@@ -6,7 +6,7 @@ export const WeatherProvider = (props) => {
   const [weather, setWeather] = useLocalStorage('weather', undefined)
   const [api, setApi] = useState({
     key : 'd0382771156e90c34e987d43ebbf59d6',
-    baseUrl : 'http://api.openweathermap.org/data/2.5/'
+    baseUrl : 'https://api.openweathermap.org/data/2.5/'
   })
   const [scale, setScale] = useLocalStorage('scale', '°C')
   return(
