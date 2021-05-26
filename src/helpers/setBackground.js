@@ -2,13 +2,9 @@ import { isDay } from './getTime'
 export const setBackground = (weather) => {
   if (weather != undefined){
     if (isDay(weather)){
-      return 'app day'
+      return 'day'
     } else if (!isDay(weather)){
-      return 'app night'
+      return 'night'
     }
-  } else{
-    return 'app'
   }
-
-  
 }

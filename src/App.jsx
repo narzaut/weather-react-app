@@ -5,14 +5,15 @@ import { GlobalContext } from './context/GlobalState'
 import { setBackground } from './helpers/setBackground'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Settings } from './components/Settings'
+
 function App() { 
   const { weatherState } = useContext(GlobalContext)
   const [weather, setWeather] = weatherState
 
   return (
     <Router>
-      <div className={ setBackground(weather) }>
-        <main>
+      <div className= 'app'>
+        <main className={setBackground(weather)}>
           <Settings />
           <Switch>
             <Route path='/' exact component={ HomeScreen } />

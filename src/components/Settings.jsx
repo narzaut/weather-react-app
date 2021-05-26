@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Menu, Dropdown, Button} from 'antd';
-import { SettingOutlined, SearchOutlined, LeftOutlined } from '@ant-design/icons'
+import { SettingOutlined, LeftOutlined } from '@ant-design/icons'
 import { Typography } from 'antd'
 import { GlobalContext } from '../context/GlobalState'
 import { useLocation, Link } from 'react-router-dom'

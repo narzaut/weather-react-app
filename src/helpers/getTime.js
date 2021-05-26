@@ -36,6 +36,5 @@ export const isDay = (weather) => {
       return true
     }
   }
-
   return false
 }

@@ -1,8 +1,7 @@
-import React, { useState, useContext } from 'react'
-import { GlobalContext } from '../context/GlobalState'
+import React from 'react'
 import SearchBar from './SearchBar'
-import { Image } from 'antd';
 import { WeatherInfo } from './WeatherInfo'
+
 const WeatherView = (props) => {
     return (
       <>

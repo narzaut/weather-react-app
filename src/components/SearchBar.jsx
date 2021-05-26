@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
-import { Redirect, useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import { Input } from 'antd'
 
 const SearchBar = (props) => {
@@ -22,8 +22,8 @@ const SearchBar = (props) => {
   }
   return (
     <div className = 'flex-container'>
-      <div className = 'search-box'>
-        <Search bordered={true} id='locationInput' type="text" placeholder='Ingrese la localidad' onSearch={onSearch} onChange={e => setQuery(e.target.value)} value={ query } enterButton />
+      <div style={{marginBottom: '2rem'}}>
+        <Search id='locationInput' type="text" placeholder='Ingrese la localidad' onSearch={onSearch} onChange={e => setQuery(e.target.value)} value={ query } enterButton />
       </div>
 
     </div>
