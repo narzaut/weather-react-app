@@ -4,6 +4,7 @@ import { SettingOutlined, SearchOutlined, LeftOutlined } from '@ant-design/icons
 import { Typography } from 'antd'
 import { GlobalContext } from '../context/GlobalState'
 import { useLocation, Link } from 'react-router-dom'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 const { Paragraph } = Typography;
 
 
@@ -13,10 +14,17 @@ export const Settings = (props) => {
 	const { scaleState, weatherState } = useContext(GlobalContext)
 	const [scale, setScale] = scaleState
 	const [weather, setWeather] = weatherState
-	const [selectedKey, setSelectedKey] = useState('1')
+	const [selectedKey, setSelectedKey] = useLocalStorage('selectedScale', '1')
 	const location = useLocation()
+	
 	const handleSelect = (item) => {
-		item.key == '1' ? setScale('°C') : setScale('°F')
+		if (item.key == '1'){
+			setScale('°C')
+			setSelectedKey('1')
+		} else if (item.key == '2'){
+			setScale('°F')
+			setSelectedKey('2') 
+		}
 	}
 
 	const handleClick = () => {
