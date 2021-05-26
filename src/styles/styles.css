@@ -12,37 +12,49 @@ main {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
   padding: 25px;
-  
-  
 }
 
 .app {
-  background-image: url('./assets/background.jpg');
+  background-image: url('../assets/background.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease;
 }
 
 .day {
-  background-image: url('./assets/day-bg.png');
+  background-image: url('../assets/day-bg.png');
 }
 
 .night {
-  background-image: url('./assets/night-bg.png');
+  background-image: url('../assets/night-bg.png');
 }
 
 .flex-container{
   display:flex;
   justify-content: center;
   align-items: center;
+
 }
 
+.settings{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
 
-
+.home-screen{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+  padding: 0;
+}
 
 .search-box {
-  width: 100%;
-  margin: 5% 0 3rem 0;
+  width: 75%;
+  
 }
 
 .weatherIcon{

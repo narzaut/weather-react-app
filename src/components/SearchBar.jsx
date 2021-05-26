@@ -1,32 +1,33 @@
-import React, {useState, useContext} from 'react'
-import { GlobalContext } from './context/GlobalState';
-
-export const api = {
-    key : 'd0382771156e90c34e987d43ebbf59d6',
-    baseUrl : 'http://api.openweathermap.org/data/2.5/'
-}  
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from '../context/GlobalState'
+import { Redirect, useHistory} from 'react-router-dom'
+import { Input } from 'antd'
 
 const SearchBar = (props) => {
-    const [query, setQuery] = useState('');
-    const [weather, setWeather] = useContext(GlobalContext)
+  const { Search } = Input
+  const { weatherState, apiState } = useContext(GlobalContext)
+  const [weather, setWeather] = weatherState
+  const [api, setApi] = apiState
+  const [query, setQuery] = useState('');
+  let history = useHistory();
 
-    const search = evt => {
-        if (evt.key === 'Enter') {
-          fetch(api.baseUrl + 'weather?q=' + query + '&appid=' + api.key + '&lang=es')
-            .then(res => res.json())
-            .then(result => {
-              setWeather(result)
-              setQuery('')
-            })
-        }
-    }
-    return (
-        <div className = 'flex-container'>
-            <div className = 'search-box'>
-                <input className = 'search-bar'id='locationInput' type="text" placeholder='Ingrese la localidad' onChange={e => setQuery(e.target.value)} value={query} onKeyPress = {search}/>
-            </div>
-        </div>
-    )
+  const onSearch = evt => {
+    fetch(api.baseUrl + 'weather?q=' + query + '&appid=' + api.key + '&lang=es')
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result)
+        setQuery('') 
+        history.push("/weather");
+      });
+  }
+  return (
+    <div className = 'flex-container'>
+      <div className = 'search-box'>
+        <Search bordered={true} id='locationInput' type="text" placeholder='Ingrese la localidad' onSearch={onSearch} onChange={e => setQuery(e.target.value)} value={ query } enterButton />
+      </div>
+
+    </div>
+  )
 }
 
 export default SearchBar

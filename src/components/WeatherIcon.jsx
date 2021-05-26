@@ -1,14 +1,5 @@
-import {WiNightFog, WiDayFog, WiNightClear, WiNightAltCloudy, WiNightAltRainMix, WiDayCloudy, WiDayRainMix, WiDaySunny} from "weather-icons-react";
-
-export const getTime = (weather) => {
-    let d = new Date()
-    let localTime = d.getTime()
-    let localOffset = d.getTimezoneOffset() * 60000
-    let utc = localTime + localOffset
-    var dt = utc + (1000 * weather.timezone)
-    let date = new Date(dt)
-    return date.getHours()
-  }
+import { WiNightFog, WiDayFog, WiNightClear, WiNightAltCloudy, WiNightAltRainMix, WiDayCloudy, WiDayRainMix, WiDaySunny } from "weather-icons-react";
+import { getTime } from '../helpers/getTime'
 
 const WeatherIcon = (props) => {
     //CONDITIONAL RENDERING
