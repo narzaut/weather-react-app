@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to run locally
 ### 1. Clone repository 
-`git@github.com:narzaut/weather-react-app.git`
+`git clone git@github.com:narzaut/weather-react-app.git`
 ### 2. Move to directory
 `cd weather-react-app`
 ### 3. Install dependencies
