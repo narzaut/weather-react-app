@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to run locally
+### 1. Clone repository 
+`git@github.com:narzaut/weather-react-app.git`
+### 2. Move to directory
+`cd weather-react-app`
+### 3. Install dependencies
+`npm install`
+### 4. Run project
+`npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
